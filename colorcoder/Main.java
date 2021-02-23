@@ -7,7 +7,7 @@ import colorcoder.type.Secondary;
 public class Main {
 	static void testNumberToPair(int pairNumber, Primary expectedMajor, Secondary expectedMinor) {
 		ColorPair colorPair = ColorPair.getColorFromPairNumber(pairNumber);
-		System.out.println("Got pair " + colorPair.ToString());
+		System.out.println("Got pair " + colorPair.toString());
 		assert (colorPair.getMajor() == expectedMajor);
 		assert (colorPair.getMinor() == expectedMinor);
 	}
@@ -22,7 +22,7 @@ public class Main {
 		String colorPair = "";
 
 		for (int i = 1; i <= 25; i++) {
-			colorPair += "Color pair " + i + " " + ColorPair.getColorFromPairNumber(i).ToString() + "\n";
+			colorPair += "Color pair " + i + " " + ColorPair.getColorFromPairNumber(i).toString() + "\n";
 		}
 		System.out.println(colorPair);
 	}
