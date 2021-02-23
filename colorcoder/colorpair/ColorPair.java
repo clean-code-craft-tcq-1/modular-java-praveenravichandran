@@ -22,7 +22,7 @@ public class ColorPair {
 		return secondary;
 	}
 
-	public String ToString() {
+	public String toString() {
 		String colorPairStr = ColorNames.primary[primary.getIndex()];
 		colorPairStr += " ";
 		colorPairStr += ColorNames.secondary[secondary.getIndex()];
