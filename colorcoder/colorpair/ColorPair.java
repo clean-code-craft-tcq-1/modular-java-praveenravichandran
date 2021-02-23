@@ -23,22 +23,22 @@ public class ColorPair {
 	}
 
 	public String toString() {
-		String colorPairStr = ColorNames.primary[primary.getIndex()];
+		String colorPairStr = ColorNames.PRIMARY[primary.getIndex()];
 		colorPairStr += " ";
-		colorPairStr += ColorNames.secondary[secondary.getIndex()];
+		colorPairStr += ColorNames.SECONDARY[secondary.getIndex()];
 		return colorPairStr;
 	}
 
 	public static ColorPair getColorFromPairNumber(int pairNumber) {
 		int zeroBasedPairNumber = pairNumber - 1;
-		Primary primary = (Primary) fromIndex(Primary.values(), zeroBasedPairNumber / ColorNames.numberOfSecondary);
+		Primary primary = (Primary) fromIndex(Primary.values(), zeroBasedPairNumber / ColorNames.NUMBER_OF_SECONDARY);
 		Secondary minorColor = (Secondary) fromIndex(Secondary.values(),
-				zeroBasedPairNumber % ColorNames.numberOfSecondary);
+				zeroBasedPairNumber % ColorNames.NUMBER_OF_SECONDARY);
 		return new ColorPair(primary, minorColor);
 	}
 
 	public static int getPairNumberFromColor(Primary primary, Secondary secondary) {
-		return primary.getIndex() * ColorNames.numberOfSecondary + secondary.getIndex() + 1;
+		return primary.getIndex() * ColorNames.NUMBER_OF_SECONDARY + secondary.getIndex() + 1;
 	}
 
 	public static IColor fromIndex(Object[] values, int index) {
